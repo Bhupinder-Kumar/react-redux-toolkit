@@ -39,7 +39,7 @@ const Product = () => {
                             <div className="price">Price: {item.price}</div>
                             <div className="rating">Rating: {item.rating}</div>
                             {CartSelector.find((cartItem) => cartItem.id === item.id) ?
-                            <button className="add-cart disabled-btn" disabled>Added in Cart</button>
+                            <button onClick={()=> dispatch(removeItem(item))} className="add-cart remove-btn">Remove From Cart</button>
                              :
                             <button className="add-cart" onClick={()=> dispatch(addItem(item))}>Add to Cart</button>
                             }
