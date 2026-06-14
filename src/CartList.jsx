@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const CartList = () => {
     const cartItemsSelector = useSelector((state) => state.cart.items);
 
-    console.log(cartItemsSelector);
+    // console.log(cartItemsSelector);
 
     const [cartItems, setCartItems] = useState(cartItemsSelector);
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ const CartList = () => {
     }, [cartItemsSelector]);
 
     const manageQuantity = (id, q) =>{
-        console.log(id, q);
+        // console.log(id, q);
 
         const quantity =  parseInt(q) > 1 ? parseInt(q) : 1; 
         const cartTempItems = cartItemsSelector.map((item) => {
@@ -26,7 +26,7 @@ const CartList = () => {
             {...item, quantity} : item;
         });
 
-        console.log(cartTempItems[0]);
+        // console.log(cartTempItems[0]);
         
 
         setCartItems(cartTempItems)
